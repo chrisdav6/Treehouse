@@ -1,8 +1,12 @@
+<?php
+$display_name = "Chris Davis";
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
   	<meta charset=utf-8>
-  	<title>PHP Basics at Treehouse</title>
+  	<title>PHP Basics by <?php echo($display_name); ?></title>
   	<link href="css/style.css" rel="stylesheet" />
   </head>
   
@@ -12,7 +16,7 @@
           <div class="avatar">
             <img src="img/logo.png" alt="Alt For Image">
           </div>
-          <h1><h1><?php echo"Chris Davis"; ?></h1></h1>
+          <h1><h1><?php echo($display_name); ?></h1></h1>
           <p>Contact:<br />
           <a href="mailto:">EMAIL</a></p>
           <hr />
@@ -33,7 +37,7 @@
         </section>
     </div>
     <section class="footer text-center">
-      &copy; 2016 Treehouse Island, Inc.
+      &copy; 2016 <?php echo($display_name); ?>
     </section>
   </body>
 </html>
