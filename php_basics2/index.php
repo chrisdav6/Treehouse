@@ -37,7 +37,8 @@ $display_name = "Chris Davis";
         </section>
     </div>
     <section class="footer text-center">
-      &copy; 2016 <?php echo($display_name); ?>
+      &copy; <?php
+              echo(date("Y") . " " . $display_name . " - Last Modified - " . date("F d Y H:i:s.")); ?>
     </section>
   </body>
 </html>
