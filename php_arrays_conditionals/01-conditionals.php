@@ -35,14 +35,27 @@ if($c != $d) {
 }
 
 
-//Using the negation operator to test if one variable is not identical in value and type to the other
-$e = 10;
-$f = "10";
+//Testing for Truthy of Falsey values
+$e = 1;
+$f = 0;
+$g = "";
 
-if($e !== $f) {
-  echo("<p>The value and type of variable <span style='color: red; font-weight: bold;'>\$e</span> $e is NOT identical to the value and type of variable <span style='color: blue; font-weight: bold;'>\$f</span> $f</p>");
-}else {
-  echo("<p>The value and type of variable <span style='color: red; font-weight: bold;'>\$e</span> $e is identical to the value and type of variable <span style='color: blue; font-weight: bold;'>\$f</span> $f</p>");
+if($e) {
+  echo("<p>The value of the variable \$e is $e and is true</p>");
 }
+
+if($f) {
+  echo("<p>The value of the variable \$f is $f and is true</p>");
+}else {
+  echo("<p>The value of the variable \$f is $f and is false</p>");
+}
+
+if($g) {
+  echo("<p>The value of the variable \$g is $g and is true</p>");
+}else {
+  echo("<p>The value of the variable \$g is an empty string $g and is false</p>");
+}
+
+
 
 ?>
