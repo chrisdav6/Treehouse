@@ -81,4 +81,24 @@ if($num1 > 500) {
   echo("<p>The variable \$num1 with a value of $num1 is not greater than 500</p>");
 }
 
+
+//Working with logical AND && operator
+$num2 = 1100;
+
+if($num2 > 500 && $num2 < 1000) {
+  echo("<p>The variable \$num2 with a value of $num2 is greater than 500 and less than 1000</p>");
+}else {
+  echo("<p>The variable \$num2 with a value of $num2 is NOT within the range of 500 and 1000</p>");
+}
+
+
+//Working with logical OR || operator
+$num3 = 1100;
+
+if($num3 < 500 || $num3 == 1000) {
+  echo("<p>The variable \$num3 with a value of $num3 is less than 500 or equal to 1000</p>");
+}else {
+  echo("<p>The variable \$num3 with a value of $num3 is NOT less than 500 or equal to 1000</p>");
+}
+
 ?>
