@@ -28,12 +28,12 @@ $display_name = "Chris Davis";
         </section>
         <section class="main">
           <h1>My First PHP Page</h1>
-    
+            <?php include "includes/hello.php"; ?> 
           <h2>Unit Conversion</h2>
-    
+            <?php include "includes/units.php"; ?>
           <hr />
-    
           <h2>Daily Exercise</h2>
+            <?php include "includes/exercise.php"; ?>
         </section>
     </div>
     <section class="footer text-center">
