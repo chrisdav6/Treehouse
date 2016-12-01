@@ -16,7 +16,7 @@ if($a == $b) {
 //Using the greater than comparison operator to test if one variable is larger in value than the other
 $score = 59;
 
-if($score > 59) {
+if($score >= 60) {
   echo("<p style='color: green; font-weight: bold;'>Great Job! Your score is $score, and you completed the level</p>");
 }else {
   echo("<p style='color: red; font-weight: bold;'>So Sorry! Your score is $score, and you FAILED!</p>");
