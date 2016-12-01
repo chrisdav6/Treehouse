@@ -68,5 +68,17 @@ if($g) {
 }
 
 
+//Working with nested conditional statements
+$num1 = 800;
+
+if($num1 > 500) {
+	if($num1 < 1000) {
+		echo("<p>The variable \$num1 with a value of $num1 is greater than 500 and less than 1000</p>");
+	}else {
+		echo("<p>The variable \$num1 with a value of $num1 is greater than 500 but is not less than 1000</p>");
+	}
+} else {
+  echo("<p>The variable \$num1 with a value of $num1 is not greater than 500</p>");
+}
 
 ?>
