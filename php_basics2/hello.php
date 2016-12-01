@@ -1,19 +1,23 @@
-<?php 
+<?php
+
 /*
- * This file is our first "Hello World!" script
- * 
- * @author: Alena Holligan
+* Doc Lock Comment
+*
+* @author: Chris Davis
 */
+
+//single line comment
+
 //our first php script
-echo 'Hello World!'; //done
-//echo 'Hello Treehouse!'; //done
+echo "Hello"; //done
 
-//you can make a single line comment as long as you want, even wrapping to a new line, as long as you don't add a  hard return
-//This is a second comment line
+//another script
+echo "Hello Treehouse!"; //done
 
 /*
-line 1
-line 2
-line 3
+multiple
+line
+comment
 */
+
 ?>

@@ -1,35 +1,25 @@
 <?php
-$name = 'Alena';
-$string_one = "Learning to display \"Hello $name!\" to the screen.\n";
-$string_one = 'Learning to display ';
-$string_one .= '"Hello ';
-$string_one .= $name;
-$string_one .= '!" to the screen.';
-//$string_one = $string_one . "\n";
-//prepend to a string
-//$string_one = 'I am ' . $string_one;
-//echo $string_one;
 
-$isReady = true;
-//var_dump($isReady);
-$isReady = false;
-//var_dump($isReady);
+//Single Quotes will not expand variable values or work with escape sequences such as \n
+$name = "Ya Dingus!";
+$string_one = 'Hello $name\n';
+echo($string_one);
 
-//var_dump(1 + "2");
+//Single Quotes will expand variable values with concatenation however escape sequences still will not work
+$stringOneConcat = 'Hello '. $name . '\n';
+echo($stringOneConcat);
 
-$a = 10;
-$b = '10';
+//Double Quotes will expand variable values and work with escape sequences such as \n
 
-//var_dump($a == $b);
-//var_dump($a === $b);
+$name2 = "Symphia Dangus!";
+$string_two = "\nHello $name2\n";
+echo($string_two);
 
-//($string_one == 'Learning to display "Hello Alena!" to the screen.');
-$string_one = "";
-if ($string_one == 'Learning to display "Hello Alena!" to the screen.') {
- echo 'the values match';  
-} elseif ($string_one == "") {
-    echo '$string_one is empty';
-} else {
- echo 'the values DO NOT match';   
-}
+//Another way to use concatenation is with the concatenation assignment operator .=
+$name3 = "Barry ";
+$name3 .= "Wilkenson ";
+$name3 .= "Stevenson ";
+$name3 .= "Davidson!\n";
+echo($name3);
+
 ?>

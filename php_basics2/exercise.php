@@ -1,30 +1,35 @@
 <?php
-// store each exercise in a string variable
-$exercise1 = 'Display "Hello World!"';
-$exercise2 = 'Convert Pounds to Kilograms';
-$exercise3 = 'Convert Kilograms to Pounds';
-$exercise4 = 'Convert Miles to Kilometers';
-$exercise5 = 'Convert Kilometers to Miles';
-$exercise6 = 'Month long string of the day';
-$exercise7 = 'String of the day with levels';
-// create a variable containing the day of the week
-$day = date('N');
-$day = 6;
-// use an if statement to test fo the day of the week
-if ($day == 1) {
- echo $exercise1;   
-} elseif ($day == 2) {
- echo $exercise2;   
-} elseif ($day == 3) {
- echo $exercise3;   
-} elseif ($day == 4) {
- echo $exercise4;   
-} elseif ($day == 5) {
- echo $exercise5;   
-} elseif ($day == 6) {
- echo $exercise6;   
-} elseif ($day == 7) {
- echo $exercise7;   
+//PHP Exercise schedule app
+
+//Store each exercise in a string variable
+$exercise1 = "Display strings to the screen";
+$exercise2 = "Working with integers";
+$exercise3 = "Working with floating point numbers";
+$exercise4 = "Working with operators";
+$exercise5 = "Created a simple PHP unit converter";
+$exercise6 = "Working with strings and concatenation";
+$exercise7 = "Learning if/elseif/else logic";
+
+//Create a variable containing the day of the week
+//PHP date("N") will return a number for the day of the week, 1 = Monday, 7 = Sunday
+$day = date("N");
+
+//Use an if statement to test for the day of the week
+//Display the exercise string for that given day of the week
+if($day == 1) {
+  echo("Today is Monday, PHP learning $exercise1\n");
+}elseif($day == 2) {
+  echo("Today is Tuesday, PHP learning $exercise2\n");
+}elseif($day == 3) {
+  echo("Today is Wednesday, PHP learning $exercise3\n");
+}elseif($day == 4) {
+  echo("Today is Thursday, PHP learning $exercise4\n");
+}elseif($day == 5) {
+  echo("Today is Friday, PHP learning $exercise5\n");
+}elseif($day == 6) {
+  echo("Today is Saturday, PHP learning $exercise6\n");
+}elseif($day == 7) {
+  echo("Today is Sunday, PHP learning $exercise7\n");
 }
-// display the corresponding exercise string
+
 ?>
