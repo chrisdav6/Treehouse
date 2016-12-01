@@ -29,9 +29,20 @@ $c = 10;
 $d = 10;
 
 if($c != $d) {
-  echo("The value of variable <span style='color: red; font-weight: bold;'>\$c</span> $c is NOT equal to the value of variable <span style='color: blue; font-weight: bold;'>\$d</span> $d");
+  echo("<p>The value of variable <span style='color: red; font-weight: bold;'>\$c</span> $c is NOT equal to the value of variable <span style='color: blue; font-weight: bold;'>\$d</span> $d</p>");
 }else {
-  echo("The value of variable <span style='color: red; font-weight: bold;'>\$c</span> $c is equal to the value of variable <span style='color: blue; font-weight: bold;'>\$d</span> $d");
+  echo("<p>The value of variable <span style='color: red; font-weight: bold;'>\$c</span> $c is equal to the value of variable <span style='color: blue; font-weight: bold;'>\$d</span> $d</p>");
+}
+
+
+//Using the negation operator to test if one variable is not identical in value and type to the other
+$h = 10;
+$i = "10";
+
+if($h !== $i) {
+  echo("<p>The value and type  of variable <span style='color: red; font-weight: bold;'>\$h</span> $h is NOT identical to the value and type of variable <span style='color: blue; font-weight: bold;'>\$i</span> $i</p>");
+}else {
+  echo("<p>The value and type of variable <span style='color: red; font-weight: bold;'>\$h</span> $h is identical to the value and type of variable <span style='color: blue; font-weight: bold;'>\$i</span> $i</p>");
 }
 
 
