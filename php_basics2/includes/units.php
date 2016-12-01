@@ -14,7 +14,7 @@ $lb_to_kg = 0.453592;
 $kilograms = $pounds * $lb_to_kg;
 
 //display to screen
-$poundsMessage = "Weight: " . $pounds . "lbs. - Converted to Kilograms = " . $kilograms . " Kilograms \n";
+$poundsMessage = "<p>Weight: " . $pounds . "lbs. - Converted to Kilograms = " . $kilograms . " Kilograms </p>";
 echo($poundsMessage);
 
 
@@ -30,7 +30,7 @@ $miles_to_kilometers = 1.60934;
 $kilometers = $miles * $miles_to_kilometers;
 
 //display to screen
-$milesMessage = "Distance: " . $miles . "miles - Converted to Kilometers = " . $kilometers . " Kilometers \n";
+$milesMessage = "<p>Distance: " . $miles . "miles - Converted to Kilometers = " . $kilometers . " Kilometers </p>";
 echo($milesMessage);
 
 ?>
