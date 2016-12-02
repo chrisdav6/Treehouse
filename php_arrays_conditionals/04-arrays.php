@@ -31,4 +31,5 @@ array_unshift($myArray, "black", "white");
 $myString2 = implode(" - ", $myArray);
 echo("<p style='font-size: 20px;'>Adding a new elements to the beginning of my array using array_unshift() function = <span style='color: steelblue; font-size: 20px;'>$myString2</span></p>");
 
+
 ?>
