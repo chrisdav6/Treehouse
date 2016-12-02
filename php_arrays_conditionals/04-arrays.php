@@ -59,9 +59,15 @@ echo("<p style='font-size: 20px;'>Removing elements from an array using the unse
 
 //08 Re-Indexing elements in an array using the array_values() function
 //array_values() will reset index. If index was 0,5,8,10 the new index would be 0,1,2,3
-array_values($myArray);
-$myString = implode(" - ", $myArray);
+$resetArray = array_values($myArray);
+$myString = implode(" - ", $resetArray);
 echo("<p style='font-size: 20px;'>Re-Indexing elements in an array using the array_values() function = <span style='color: darkblue; font-size: 20px;'>$myString</span> - Index is reset to 0,1,2,3</p>");
+
+
+//09 Editting a single array element using it's key
+$resetArray[0] = "darkgreen";
+$myString = implode(" - ", $resetArray);
+echo("<p style='font-size: 20px;'>Editting a single array element using it's key = <span style='color: darkseagreen; font-size: 20px;'>$myString</span> - green was updated to $resetArray[0]</p>");
 
 
 ?>
