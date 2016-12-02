@@ -64,10 +64,10 @@ $myString = implode(" - ", $resetArray);
 echo("<p style='font-size: 20px;'>Re-Indexing elements in an array using the array_values() function = <span style='color: darkblue; font-size: 20px;'>$myString</span> - Index is reset to 0,1,2,3</p>");
 
 
-//09 Editting a single array element using it's key
+//09 Editing a single array element using it's key
 $resetArray[0] = "darkgreen";
 $myString = implode(" - ", $resetArray);
-echo("<p style='font-size: 20px;'>Editting a single array element using it's key = <span style='color: darkseagreen; font-size: 20px;'>$myString</span> - green was updated to $resetArray[0]</p>");
+echo("<p style='font-size: 20px;'>Editing a single array element using it's key = <span style='color: darkseagreen; font-size: 20px;'>$myString</span> - green was updated to $resetArray[0]</p>");
 
 
 ?>
