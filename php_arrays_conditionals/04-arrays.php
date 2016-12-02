@@ -21,12 +21,14 @@ echo("<p style='font-size: 20px;'>Adding a new element to the end of my array us
 
 
 //03 Adding new elements to the end of an array using the array_push() function
+//If array index was 1,3,5 array_push() will add 6. New array index will be 1,3,5,6
 array_push($myArray, "purple", "grey");
 $myString2 = implode(" - ", $myArray);
 echo("<p style='font-size: 20px;'>Adding a new elements to the end of my array using push_array() function = <span style='color: salmon; font-size: 20px;'>$myString2</span></p>");
 
 
 //04 Adding new elements to the beginning of an array using the array_unshift() function
+//If array index was 1,3,5 array_unshift() will reset the index. New array index will be 0,1,2,3
 array_unshift($myArray, "black", "white");
 $myString2 = implode(" - ", $myArray);
 echo("<p style='font-size: 20px;'>Adding a new elements to the beginning of my array using array_unshift() function = <span style='color: steelblue; font-size: 20px;'>$myString2</span></p>");
