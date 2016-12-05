@@ -32,6 +32,29 @@ $myArray = [1,3,0,5];
 echo("<p>My indexed array before shuffle() = " . implode(", ", $myArray));
 shuffle($myArray);
 echo(" - My indexed array after shuffle() = " . implode(", ", $myArray) . "</p>");
-var_dump($myArray);
+
+
+//05 Sorting an associative array alphabetically by key with ksort()
+$myArray2 = [
+  "scott" => "integra",
+  "colleen" => "accord v6",
+  "bill" => "outback",
+  "chris" => "s2000"
+];
+echo("<p>My associative array before ksort() = " . implode(", ", $myArray2));
+ksort($myArray2);
+echo(" - My associative array after ksort() = " . implode(", ", $myArray2) . "</p>");
+
+
+//06 Sorting an associative array alphabetically in reverse by key with krsort()
+$myArray2 = [
+  "scott" => "integra",
+  "colleen" => "accord v6",
+  "bill" => "outback",
+  "chris" => "s2000"
+];
+echo("<p>My associative array before krsort() = " . implode(", ", $myArray2));
+krsort($myArray2);
+echo(" - My associative array after krsort() = " . implode(", ", $myArray2) . "</p>");
 
 ?>
