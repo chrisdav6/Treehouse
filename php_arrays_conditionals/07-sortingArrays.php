@@ -21,8 +21,17 @@ echo(" - My indexed array after sort() = " . implode(", ", $myArray) . "</p>");
 //03 Sorting an indexed array with rsort()
 //rsort() will reorder the array based on its value in reverse and will re-index array
 $myArray = [1,3,0,5];
-echo("<p>My indexed array before sort() = " . implode(", ", $myArray));
+echo("<p>My indexed array before rsort() = " . implode(", ", $myArray));
 rsort($myArray);
-echo(" - My indexed array after sort() = " . implode(", ", $myArray) . "</p>");
+echo(" - My indexed array after rsort() = " . implode(", ", $myArray) . "</p>");
+
+
+//04 Sorting an indexed array randomly with shuffle()
+//shuffle() will reorder the array based on its value randomly and will re-index array
+$myArray = [1,3,0,5];
+echo("<p>My indexed array before shuffle() = " . implode(", ", $myArray));
+shuffle($myArray);
+echo(" - My indexed array after shuffle() = " . implode(", ", $myArray) . "</p>");
+var_dump($myArray);
 
 ?>
