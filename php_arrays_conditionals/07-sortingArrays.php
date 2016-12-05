@@ -46,7 +46,7 @@ ksort($myArray2);
 echo(" - My associative array after ksort() = " . implode(", ", $myArray2) . "</p>");
 
 
-//06 Sorting an associative array alphabetically in reverse by key with krsort()
+//06 Sorting an associative array alphabetically by key in reverse with krsort()
 $myArray2 = [
   "scott" => "integra",
   "colleen" => "accord v6",
@@ -56,5 +56,17 @@ $myArray2 = [
 echo("<p>My associative array before krsort() = " . implode(", ", $myArray2));
 krsort($myArray2);
 echo(" - My associative array after krsort() = " . implode(", ", $myArray2) . "</p>");
+
+
+//07 Sorting an associative array alphabetically by value with asort()
+$myArray2 = [
+  "scott" => "integra",
+  "colleen" => "accord v6",
+  "bill" => "outback",
+  "chris" => "s2000"
+];
+echo("<p>My associative array before asort() = " . implode(", ", $myArray2));
+asort($myArray2);
+echo(" - My associative array after asort() = " . implode(", ", $myArray2) . "</p>");
 
 ?>
