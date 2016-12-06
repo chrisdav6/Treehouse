@@ -3,9 +3,8 @@
 //Working with for loops. Same syntax as javascript for loops
 
 $year = 2016;
-
-for($counter = 1896; $counter <= $year; $counter++) {
-  $events = [
+$counter = "";
+$events = [
     1906 => "<p style='color: tomato; font-size: 30px;'>The year is $counter. 1st animated cartoon copyrighted</p>",
     1916 => "<p style='color: teal; font-size: 30px;'>The year is $counter. The toggle light switch is invented by William J. Newton and Morris Goldberg</p>",
     1926 => "<p style='color: orange; font-size: 30px;'>The year is $counter. John Logie Baird conducts the first public demonstration of a television</p>",
@@ -17,8 +16,9 @@ for($counter = 1896; $counter <= $year; $counter++) {
     1986 => "<p style='color: salmon; font-size: 30px;'>The year is $counter. The Space Shuttle Challenger disintegrates 73 seconds after launching, killing all seven astronauts on board.</p>",
     1996 => "<p style='color: lime; font-size: 30px;'>The year is $counter. In 12 months number of Internet host computers goes from 1 million to 10 million</p>",
     2006 => "<p style='color: darkblue; font-size: 30px;'>The year is $counter. NASA launches the New Horizons probe</p>"
-  ];
-  
+];
+
+for($counter = 1896; $counter <= $year; $counter++) {
   switch($counter) {
     case 1906:
       echo($events["1906"]);
