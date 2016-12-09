@@ -34,4 +34,14 @@ function mySubstring2($sub){
 $subString2 = mySubstring2("This is my string");
 echo($subString2);
 
+
+//02-strpos() will return the integer value of the location of the passed string argument
+//If the passed argument is not found the strpos() function will return false
+function mySrtringPos($string, $pos) {
+	return "<p>The string position of the passed argument \"hello\" within the string variable \"$string\" is - " . strpos($string, $pos) . "</p>";
+}
+
+$stringPos1 = mySrtringPos("Wouldnt you like to say hello", "hello");
+echo($stringPos1);
+
 ?>
