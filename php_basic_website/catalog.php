@@ -1,12 +1,7 @@
 <?php 
-$catalog = [];
-$catalog[101] = "Design Patterns";
-$catalog[201] = "Forrest Gump";
-$catalog[301] = "Beethoven";
-$catalog[102] = "Clean Code";
- 
 $pageTitle = "Full Catalog";
 $section = null;
+include("includes/data.php");
 
 if(isset($_GET["cat"])) {
   if($_GET["cat"] == "books") {
@@ -30,7 +25,7 @@ include("includes/header.php");
     <ul>
       <?php
       foreach($catalog as $item) {
-        echo("<li>$item</li>");
+        echo("<li>" . $item["title"] . "</li>");
       }
       ?>
     </ul>
