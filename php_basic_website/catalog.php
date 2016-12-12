@@ -1,7 +1,8 @@
 <?php 
+include("includes/data.php");
+include("includes/functions.php");
 $pageTitle = "Full Catalog";
 $section = null;
-include("includes/data.php");
 
 if(isset($_GET["cat"])) {
   if($_GET["cat"] == "books") {
@@ -24,8 +25,8 @@ include("includes/header.php");
     <h1><?php echo($pageTitle); ?></h1>
     <ul class="items">
       <?php
-      foreach($catalog as $item) {
-        echo("<li><a href='#'><img src='" . $item["img"] . "' alt='" . $item["title"] . "'><p>View Details</p></a></li>");
+      foreach($catalog as $id => $item) {
+        echo(get_item_html($id, $item));
       }
       ?>
     </ul>
