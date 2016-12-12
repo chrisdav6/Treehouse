@@ -33,7 +33,7 @@ $myKeys = array_keys($myArray);
 echo("<p>" . implode(", ", $myKeys) . "</p>");
 
 
-//02-array_walk() will pass a function to every instance of the array
+//02-array_walk() will pass a function to every index of the array
 $myArray2 = [
   "Honda" => "Spoon Sports",
   "BMW" => "Team Studie",
