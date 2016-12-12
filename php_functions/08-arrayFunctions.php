@@ -32,4 +32,18 @@ foreach(array_keys($myArray) as $value) {
 $myKeys = array_keys($myArray);
 echo("<p>" . implode(", ", $myKeys) . "</p>");
 
+
+//02-array_walk() will pass a function to every instance of the array
+$myArray2 = [
+  "Honda" => "Spoon Sports",
+  "BMW" => "Team Studie",
+  "Nissan" => "Calsonic"
+];
+
+function printCars($value, $key) {
+  echo("<p>$value is a car tuner that works with $key</p>");
+}
+
+array_walk($myArray2, "printCars");
+
 ?>
