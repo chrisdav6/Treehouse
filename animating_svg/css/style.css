@@ -15,16 +15,39 @@ svg {
   GEAR
 --------------------------- */
 
+.gear-bg {
+  transition: 1s;
+}
+
+.gear-bg:hover {
+  fill: #3881cc;
+}
 
 
 /* --------------------------
   HAMMER
 --------------------------- */
 
+.hammer-bg {
+  transition: 1s;
+}
 
+.hammer-bg:hover {
+  fill: #f7bd2a;
+}
 
 /* --------------------------
   HEART
 --------------------------- */
+
+.heart-bg {
+  transition: 1s;
+}
+
+.heart-bg:hover {
+  fill: #f74a83;
+}
+
+
 
 
