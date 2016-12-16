@@ -44,6 +44,12 @@ svg {
   }
 }
 
+@keyframes pulse {
+  50% {
+    transform: scale(1.4);
+  }
+}
+
 /* --------------------------
   SVG Styles
 --------------------------- */
@@ -67,3 +73,26 @@ svg {
 .star {
   animation: turn 1s ease-out backwards;
 }
+
+.star circle {
+  animation: pulse .7s 1.5s;
+}
+
+.star circle:nth-of-type(2) {
+  animation-delay: 1.6s;
+}
+
+.star circle:nth-of-type(3) {
+  animation-delay: 1.7s;
+}
+
+.star circle:nth-of-type(4) {
+  animation-delay: 1.8s;
+}
+
+.star circle:nth-of-type(5) {
+  animation-delay: 1.9s;
+}
+
+
+
