@@ -10,17 +10,22 @@ svg {
   width: 33.32%;
   float: left;
 }
+.gear-bg, .hammer-bg, .heart-bg {
+  transition: .5s ease-out;
+  stroke-width: 0;
+}
 
 /* --------------------------
   GEAR
 --------------------------- */
 
 .gear-bg {
-  transition: 1s;
+  stroke: #0f718e;
 }
 
 .gear-bg:hover {
   fill: #3881cc;
+  stroke-width: 8;
 }
 
 
@@ -29,11 +34,12 @@ svg {
 --------------------------- */
 
 .hammer-bg {
-  transition: 1s;
+  stroke: #feae6e;
 }
 
 .hammer-bg:hover {
   fill: #f7bd2a;
+  stroke-width: 8;
 }
 
 /* --------------------------
@@ -41,11 +47,12 @@ svg {
 --------------------------- */
 
 .heart-bg {
-  transition: 1s;
+  stroke: #a3093c;
 }
 
 .heart-bg:hover {
   fill: #f74a83;
+  stroke-width: 8;
 }
 
 
