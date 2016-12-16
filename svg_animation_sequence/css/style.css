@@ -28,6 +28,22 @@ svg {
   }
 }
 
+@keyframes turn {
+  0% {
+    transform: rotate(0deg) scale(0);
+    opacity: 0;
+  }
+  60% {
+    transform: rotate(375deg) scale(1.1);
+  }
+  80% {
+    transform: rotate(355deg) scale(0.9);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
 /* --------------------------
   SVG Styles
 --------------------------- */
@@ -46,4 +62,8 @@ svg {
 
 .inline {
   animation-delay: .15s;
+}
+
+.star {
+  animation: turn 1s ease-out backwards;
 }
