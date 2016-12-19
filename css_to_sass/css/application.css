@@ -104,6 +104,24 @@ a:active {
 .resorts {
   float: right; }
 
+.main-header, .main-footer, .primary-content {
+  text-align: center; }
+
+.primary-content, .secondary-content {
+  border-top: 2px solid #dfe2e6; }
+
+.primary-content, .secondary-content {
+  width: 75%;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin: auto;
+  max-width: 960px; }
+
+.secondary-content:after {
+  content: "";
+  display: table;
+  clear: both; }
+
 /* Web Fonts -------------------- */
 @font-face {
   font-family: 'Abolition Regular';

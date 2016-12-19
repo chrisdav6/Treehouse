@@ -13,13 +13,19 @@
 }
 
 .primary-content {
-	padding-top: 25px;
+  @extend %content;
+  @extend %centered;
+  @extend %t-border;
+  padding-top: 25px;
   padding-bottom: 95px;
 }
 
 .secondary-content {
-	padding-top: 80px;
-	padding-bottom: 70px;
+  @extend %content;
+  @extend %t-border;
+  @extend %clearfix;
+  padding-top: 80px;
+  padding-bottom: 70px;
   border-bottom: 2px solid #dfe2e6;
 }
 
