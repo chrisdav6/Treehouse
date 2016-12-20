@@ -3,6 +3,11 @@
 .resorts,
 .tips {
   width: 46.5%;
+  
+  @media #{$brk-narrow} {
+    float: none;
+    width: 100%;
+  }
 }
 
 .tips {
