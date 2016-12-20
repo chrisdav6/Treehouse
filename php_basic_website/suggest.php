@@ -11,7 +11,7 @@ include("includes/header.php");
     
     <p>If you think there is something I&rsquo;m missing, let me know ya dingus! Complete the form to send it to me over the interwebs</p>
     
-    <form method="post">
+    <form method="post" action="process.php">
       <table>
         <tr>
           <th><label for="name">Name: </label></th>
