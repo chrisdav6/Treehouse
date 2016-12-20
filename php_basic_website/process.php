@@ -12,5 +12,8 @@ $message .= "<p>Best Regards,<br>Chris</p>";
 
 echo($message);
 
-  
+//Send Email
+
+//Redirect to thanks.php
+header("location:thanks.php");
 ?>
