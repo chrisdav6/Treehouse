@@ -1,12 +1,6 @@
 /* Web Fonts -------------------- */
 
-@font-face {
-  font-family: 'Abolition Regular';
-  src: url('../fonts/abolition-regular-webfont.eot');
-  src: url('../fonts/abolition-regular-webfont.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/abolition-regular-webfont.woff') format('woff'),
-       url('../fonts/abolition-regular-webfont.ttf') format('truetype');
-}
+@include font-face('Abolition Regular', abolition-regular);
 
 /* Main Styles --------------------- */
 
@@ -31,8 +25,10 @@
   }  
 }
 
+
+
 .intro {
   font-size: 1.25em;
   line-height: 1.6; 
-	color: initial;
+  color: initial;
 }
