@@ -4,6 +4,6 @@
   height: 850px;
   background: linear-gradient($color-prim, transparent 90%),
               linear-gradient(0deg, #fff, transparent),
-              $color-prim url('../img/mountains.jpg') no-repeat center;
+              $color-prim url('#{$path-img}/mountains.jpg') no-repeat center;
   background-size: cover;
 }
