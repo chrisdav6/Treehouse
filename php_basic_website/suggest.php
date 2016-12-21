@@ -17,6 +17,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   
   require("includes/phpmailer/class.phpmailer.php");
   
+  $mail = new PHPMailer;
+  
+  if(!$mail->ValidateAddress($email)) {
+    echo("Invalid Email Address");
+    exit;
+  }
+  
   //Send Email
   $message = "Thank you $name for your interest.<br>";
   $message .= "I have your email address as $email<br>";
