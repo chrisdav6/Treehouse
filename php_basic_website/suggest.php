@@ -3,10 +3,15 @@
 if($_SERVER["REQUEST_METHOD"] == "POST") {
   $name = trim(filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING));
   $email = trim(filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL));
+  $category = trim(filter_input(INPUT_POST, "category", FILTER_SANITIZE_STRING));
+  $title = trim(filter_input(INPUT_POST, "title", FILTER_SANITIZE_STRING));
+  $format = trim(filter_input(INPUT_POST, "format", FILTER_SANITIZE_STRING));
+  $genre = trim(filter_input(INPUT_POST, "genre", FILTER_SANITIZE_STRING));
+  $year = trim(filter_input(INPUT_POST, "year", FILTER_SANITIZE_STRING));
   $details = trim(filter_input(INPUT_POST, "details", FILTER_SANITIZE_SPECIAL_CHARS));
   
-  if($name == "" || $email == "" || $details == "") {
-    echo("Please fill in all fields");
+  if($name == "" || $email == "" || $category == "" || $title == "") {
+    echo("Please fill in required fields ya dingus! Name, Email, Category and Title");
     exit;
   }
   
@@ -28,11 +33,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   }
   
   //Compose message
-  $message = "Thank you $name for your interest.<br>";
-  $message .= "I have your email address as $email<br>";
-  $message .= "I have also received your message:  $details<br>";
-  $message .= "I will get back to you as soon as i can";
-  $message .= "<p>Best Regards,<br>Chris</p>";
+  $message = "Name: $name<br>";
+  $message .= "Email:  $email<br>";
+  $message .= "Category:  $category<br>";
+  $message .= "Title:  $title<br>";
+  $message .= "Format:  $format<br>";
+  $message .= "Year:  $year<br>";
+  $message .= "<p>Details:  <br>";
+  $message .= "$details</p>";
   
   //Send Email using phpmailer
   $mail->setFrom($email, $name);
@@ -75,15 +83,15 @@ include("includes/header.php");
     <form method="post" action="suggest.php">
       <table>
         <tr>
-          <th><label for="name">Name</label></th>
+          <th><label for="name">Name <span style="font-size: 12px; color: red">(Required)</span></label></th>
           <td><input type="text" name="name" id="name"></td>
         </tr>
         <tr>
-          <th><label for="email">Email</label></th>
+          <th><label for="email">Email <span style="font-size: 12px; color: red">(Required)</span></label></th>
           <td><input type="text" name="email" id="email"></td>
         </tr>
         <tr>
-          <th><label for="category">Category</label></th>
+          <th><label for="category">Category <span style="font-size: 12px; color: red">(Required)</span></label></th>
           <td>
             <select name="category" id="category">
               <option value="">Select One</option>
@@ -94,7 +102,7 @@ include("includes/header.php");
           </td>
         </tr>
         <tr>
-          <th><label for="title">Title</label></th>
+          <th><label for="title">Title <span style="font-size: 12px; color: red">(Required)</span></label></th>
           <td><input type="text" name="title" id="title"></td>
         </tr>
         <tr>
