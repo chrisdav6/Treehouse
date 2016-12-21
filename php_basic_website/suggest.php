@@ -73,10 +73,13 @@ include("includes/header.php");
     <?php
     if(isset($_GET["status"]) && $_GET["status"] == "thanks") {
       echo("<p>Thanks for the email! I will check out your suggestion</p>");
-    }else { ?>
-      
-    <p>If you think there is something I&rsquo;m missing, let me know ya dingus! Complete the form to send it to me over the interwebs</p>
-      
+    }else {
+      if(isset($error_message)) {
+        echo("<p class='message'>$error_message</p>");
+      }else {
+        echo("<p>If you think there is something I&rsquo;m missing, let me know ya dingus! Complete the form to send it to me over the interwebs</p>");
+      }
+    ?>
     
     <form method="post" action="suggest.php">
       <table>
