@@ -15,23 +15,41 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     exit;
   }
   
+  //Require phpmailer
   require("includes/phpmailer/class.phpmailer.php");
   
+  //Create new instance of php mailer object
   $mail = new PHPMailer;
   
+  //Validate email format using phpmailer validation function
   if(!$mail->ValidateAddress($email)) {
     echo("Invalid Email Address");
     exit;
   }
   
-  //Send Email
+  //Compose message
   $message = "Thank you $name for your interest.<br>";
   $message .= "I have your email address as $email<br>";
   $message .= "I have also received your message:  $details<br>";
   $message .= "I will get back to you as soon as i can";
   $message .= "<p>Best Regards,<br>Chris</p>";
-  echo($message);
-
+  
+  //Send Email using phpmailer
+  $mail->setFrom($email, $name);
+  $mail->addAddress('treehouse@localhost', 'Symphia Dangus Dingus');     // Add a recipient
+  $mail->addAddress('ellen@example.com');               // Name is optional
+  
+  $mail->isHTML(false);                                  // Set email format to HTML
+  
+  $mail->Subject = 'Personal Media Library Suggestion from ' . $name;
+  $mail->Body    = $message;
+  
+  if(!$mail->send()) {
+    echo 'Message could not be sent.';
+    echo 'Mailer Error: ' . $mail->ErrorInfo;
+    exit;
+  }
+  
   //Redirect to thanks.php
   header("location:suggest.php?status=thanks");
 }
