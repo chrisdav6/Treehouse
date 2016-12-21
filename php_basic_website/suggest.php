@@ -11,13 +11,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   $details = trim(filter_input(INPUT_POST, "details", FILTER_SANITIZE_SPECIAL_CHARS));
   
   if($name == "" || $email == "" || $category == "" || $title == "") {
-    echo("Please fill in required fields ya dingus! Name, Email, Category and Title");
-    exit;
+    $error_message = "Please fill in required fields ya dingus! Name, Email, Category and Title";
   }
   
   if($_POST["address"] != "") {
-    echo("Bad form input");
-    exit;
+    $error_message = "Bad form input";
   }
   
   //Require phpmailer
@@ -28,38 +26,38 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   
   //Validate email format using phpmailer validation function
   if(!$mail->ValidateAddress($email)) {
-    echo("Invalid Email Address");
-    exit;
+    $error_message = "Invalid Email Address";
   }
   
-  //Compose message
-  $message = "Name: $name<br>";
-  $message .= "Email:  $email<br>";
-  $message .= "Category:  $category<br>";
-  $message .= "Title:  $title<br>";
-  $message .= "Format:  $format<br>";
-  $message .= "Year:  $year<br>";
-  $message .= "<p>Details:  <br>";
-  $message .= "$details</p>";
-  
-  //Send Email using phpmailer
-  $mail->setFrom($email, $name);
-  $mail->addAddress('treehouse@localhost', 'Symphia Dangus Dingus');     // Add a recipient
-  $mail->addAddress('ellen@example.com');               // Name is optional
-  
-  $mail->isHTML(false);                                  // Set email format to HTML
-  
-  $mail->Subject = 'Personal Media Library Suggestion from ' . $name;
-  $mail->Body    = $message;
-  
-  if(!$mail->send()) {
-    echo 'Message could not be sent.';
-    echo 'Mailer Error: ' . $mail->ErrorInfo;
-    exit;
+  if(!isset($error_message)) {
+    //Compose message
+    $message = "Name: $name<br>";
+    $message .= "Email:  $email<br>";
+    $message .= "Category:  $category<br>";
+    $message .= "Title:  $title<br>";
+    $message .= "Format:  $format<br>";
+    $message .= "Year:  $year<br>";
+    $message .= "<p>Details:  <br>";
+    $message .= "$details</p>";
+    
+    //Send Email using phpmailer
+    $mail->setFrom($email, $name);
+    $mail->addAddress('treehouse@localhost', 'Symphia Dangus Dingus');     // Add a recipient
+    $mail->addAddress('ellen@example.com');               // Name is optional
+    
+    $mail->isHTML(false);                                  // Set email format to HTML
+    
+    $mail->Subject = 'Personal Media Library Suggestion from ' . $name;
+    $mail->Body    = $message;
+    
+    if($mail->send()) {
+      //Redirect to thanks.php
+      header("location:suggest.php?status=thanks");
+      exit;
+    }
+    $error_message = 'Message could not be sent.';
+    $error_message .= 'Mailer Error: ' . $mail->ErrorInfo;
   }
-  
-  //Redirect to thanks.php
-  header("location:suggest.php?status=thanks");
 }
 
 $pageTitle = "Suggest a Media Item";
