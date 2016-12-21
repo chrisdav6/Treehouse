@@ -1,9 +1,19 @@
 <?php 
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
-  $name = $_POST["name"];
-  $email = $_POST["email"];
-  $details = $_POST["details"];
+  $name = trim(filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING));
+  $email = trim(filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL));
+  $details = trim(filter_input(INPUT_POST, "details", FILTER_SANITIZE_SPECIAL_CHARS));
+  
+  if($name == "" || $email == "" || $details == "") {
+    echo("Please fill in all fields");
+    exit;
+  }
+  
+  if($_POST["address"] != "") {
+    echo("Bad form input");
+    exit;
+  }
   
   $message = "Thank you $name for your interest.<br>";
   $message .= "I have your email address as $email<br>";
@@ -46,6 +56,10 @@ include("includes/header.php");
         <tr>
           <th><label for="email">Email: </label></th>
           <td><input type="text" name="email" id="email"></td>
+        </tr>
+        <tr style="display: none;"><!--HoneyPot Field-->
+          <th><label for="address">Address: </label></th>
+          <td><input type="text" name="address" id="address"></td>
         </tr>
         <tr>
           <th><label for="details">Suggest Details: </label></th>
