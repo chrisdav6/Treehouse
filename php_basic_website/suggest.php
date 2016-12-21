@@ -82,6 +82,32 @@ include("includes/header.php");
           <th><label for="email">Email: </label></th>
           <td><input type="text" name="email" id="email"></td>
         </tr>
+        <tr>
+          <th><label for="category">Category: </label></th>
+          <td>
+            <select name="category" id="category">
+              <option value="">Select One</option>
+              <option value="Books">Books</option>
+              <option value="Movies">Movies</option>
+              <option value="Music">Music</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th><label for="title">Title: </label></th>
+          <td><input type="text" name="title" id="title"></td>
+        </tr>
+        <tr>
+          <th><label for="format">Format: </label></th>
+          <td>
+            <select name="format" id="format">
+              <option value="">Select One</option>
+              <option value="Books">Books</option>
+              <option value="Movies">Movies</option>
+              <option value="Music">Music</option>
+            </select>
+          </td>
+        </tr>
         <tr style="display: none;"><!--HoneyPot Field-->
           <th><label for="address">Address: </label></th>
           <td><input type="text" name="address" id="address"></td>
