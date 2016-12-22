@@ -5,3 +5,7 @@
 .site-logo {
   margin-bottom: 2em;
 }
+
+.btn, .progbar, .tooltip {
+  @include bg-colors($ui-colors);
+}

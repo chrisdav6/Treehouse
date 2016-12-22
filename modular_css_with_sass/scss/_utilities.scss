@@ -15,3 +15,11 @@
 }
 
 // Mixins
+  
+@mixin bg-colors($map) {
+  @each $theme, $color in $map {
+    &--#{$theme} {
+      background-color: $color;
+    }
+  }
+}
