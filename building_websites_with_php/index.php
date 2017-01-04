@@ -12,8 +12,16 @@ date_default_timezone_set("America/New_York");
 
 $app = new \Slim\Slim();
 
-$app->get('/hello/:name', function($name) {
-  echo("Hello, $name");
+$app->get('/', function() {
+  echo("Home");
+});
+
+$app->get('/about', function() {
+  echo("About");
+});
+
+$app->get('/contact', function() {
+  echo("Contact");
 });
 
 $app->run();
