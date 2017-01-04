@@ -216,7 +216,12 @@ h2 {
   color: #999da1; }
 
 .site-logo {
-  margin-bottom: 2em; }
+  margin-bottom: 2em;
+  background-image: url("../img/logo.svg");
+  background-repeat: no-repeat;
+  width: 115px;
+  height: 45px;
+  display: inline-block; }
 
 .btn--default, .progbar--default, .tooltip--default {
   background-color: #52bab3; }
