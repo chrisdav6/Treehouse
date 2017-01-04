@@ -10,7 +10,18 @@ date_default_timezone_set("America/New_York");
 //$log->pushHandler(new StreamHandler('app.txt', Logger::WARNING));
 //$log->addWarning('Foo');
 
-$app = new \Slim\Slim();
+$app = new \Slim\Slim( array(
+  'view' => new \Slim\Views\Twig()
+));
+
+$view = $app->view();
+$view->parserOptions = array(
+    'debug' => true,
+);
+
+$view->parserExtensions = array(
+    new \Slim\Views\TwigExtension(),
+);
 
 $app->get('/', function() use($app){
   $app->render('index.html');
