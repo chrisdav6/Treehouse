@@ -1,0 +1,12 @@
+{
+    "name": "root/building_websites_with_php",
+    "authors": [
+        {
+            "name": "Chris Davis",
+            "email": "chris.davis5440@gmail.com"
+        }
+    ],
+    "require": {
+        "monolog/monolog": "^1.22"
+    }
+}
