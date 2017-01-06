@@ -31,6 +31,10 @@ $app->get('/contact', function() use($app){
   $app->render('contact.twig');
 })->name('contact');
 
+$app->post('/contact', function() use($app){
+  var_dump($app->request->post());
+});
+
 $app->run();
           
 ?>
