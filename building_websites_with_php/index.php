@@ -14,6 +14,8 @@ $app = new \Slim\Slim( array(
   'view' => new \Slim\Views\Twig()
 ));
 
+$app->add(new \Slim\Middleware\SessionCookie());
+
 $view = $app->view();
 $view->parserOptions = array(
     'debug' => true,
@@ -42,7 +44,7 @@ $app->post('/contact', function() use($app){
     $cleanMsg = filter_var($msg, FILTER_SANITIZE_STRING);
     echo("$cleanName - $cleanEmail - $cleanMsg");
   } else {
-    echo("Fail");
+    $app->flash('fail', 'All fields must be filled out');
     $app->redirect('/contact');
   }
   
@@ -60,8 +62,10 @@ $app->post('/contact', function() use($app){
   $result = $mailer->send($message);
   
   if($result > 0) {
+    $app->flash('success', 'Thanks So Much Dingus!');
     $app->redirect('/');
   } else {
+    $app->flash('fail', 'Something went wrong!');
     $app->redirect('/contact');
   }
   
