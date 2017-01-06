@@ -37,7 +37,10 @@ $app->post('/contact', function() use($app){
   $msg = $app->request->post('msg');
   
   if(!empty($name) && !empty($email) && !empty($msg)) {
-    echo("Success!");
+    $cleanName = filter_var($name, FILTER_SANITIZE_STRING);
+    $cleanEmail = filter_var($email, FILTER_SANITIZE_EMAIL);
+    $cleanMsg = filter_var($msg, FILTER_SANITIZE_STRING);
+    echo("$cleanName - $cleanEmail - $cleanMsg");
   } else {
     echo("Fail");
     $app->redirect('/contact');
