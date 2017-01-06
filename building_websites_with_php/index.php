@@ -46,16 +46,24 @@ $app->post('/contact', function() use($app){
     $app->redirect('/contact');
   }
   
-  $transport = Swift_SendmailTrnasport::newInstance('/usr/sbin/sendmail -bs');
+  $transport = Swift_SendmailTransport::newInstance('/usr/sbin/sendmail -bs');
   $mailer = \Swift_Mailer::newInstance($transport);
   
   $message = \Swift_Message::newInstance();
   $message->setSubject('Email From Our Website');
   $message->setFrom(array(
-    $cleanName => $cleanEmail
+    $cleanEmail => $cleanName 
   ));
   $message->setTo(array('treehouse@localhost'));
   $message->setBody($cleanMsg);
+  
+  $result = $mailer->send($message);
+  
+  if($result > 0) {
+    $app->redirect('/');
+  } else {
+    $app->redirect('/contact');
+  }
   
 });
 
