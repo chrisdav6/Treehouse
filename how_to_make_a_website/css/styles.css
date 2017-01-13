@@ -90,6 +90,13 @@ footer {
   color: #5295b7;
 }
 
+#gallery li a p {
+  margin: 0;
+  padding: 5%;
+  font-size: 0.95em;
+  color: #848484;
+}
+
 
 
 /**********************
