@@ -1,4 +1,3 @@
-/*#2A603B*/
 
 a {
   text-decoration: none;
@@ -14,3 +13,42 @@ a {
   text-align: center;
   margin: 0;
 }
+
+a {
+  color: #6ab47b;
+}
+
+header {
+  background: #5295b7;
+  border-color: #30779b;
+}
+
+h1, h2 {
+  color: #fff;
+}
+
+nav {
+  background: #30779b;
+}
+
+nav a, nav a:visited {
+  color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
