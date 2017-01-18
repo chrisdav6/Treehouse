@@ -1,9 +1,28 @@
-.nav {
+.nav, .main {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
 }
 
-.nav li:first-child {
-  margin-right: auto;
+.nav {
+	-webkit-flex-direction: row;
+	-webkit-justify-content: space-between;
+	-webkit-flex-wrap: wrap;
+}
+
+.nav li {
+  flex-grow: 1;
+}
+
+.col {
+  flex: 1;
+}
+
+.col-c {
+  flex: 2;
+  order: -1;
+}
+
+@media screen and (max-width: 999px) {
+  .main {
+    flex-direction: column;
+  }
 }
