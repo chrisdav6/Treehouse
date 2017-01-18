@@ -109,7 +109,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const li = createLI(text);
     
     //Append the li to the ul
-    ul.appendChild(li);
+    if(text != "") {
+      ul.appendChild(li);
+    } else {
+      alert("Please enter a name");
+    }
   });
   
     
