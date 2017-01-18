@@ -27,15 +27,21 @@ function createLI(text) {
   //Append the label and checkbox to the li
   li.appendChild(label);
   
-  //Create a button element with the text content remove
-  const button = document.createElement("button");
-  button.textContent = "Remove";
-  
+  //Create a button element with the text content edit
+  const editButton = document.createElement("button");
+  editButton.textContent = "Edit";
   //Append the button to the li
-  li.appendChild(button);
+  li.appendChild(editButton);
+  
+  //Create a button element with the text content remove
+  const removeButton = document.createElement("button");
+  removeButton.textContent = "Remove";
+  //Append the button to the li
+  li.appendChild(removeButton);
   
   return li;
 }
+
 
 
 //Create an submit event handler on the form element
@@ -82,12 +88,16 @@ ul.addEventListener("change", (e) => {
 //Create a on click event handler on the button within the ul element
   
 ul.addEventListener("click", (e) => {
+  const button = e.target;
+  const li = e.target.parentNode;
+  const ul = li.parentNode;
   //Check to see if the element with a type of button with the text content "Remove" was clicked
-  if(e.target.tagName === "BUTTON" && e.target.textContent === "Remove") {
-    const li = e.target.parentNode;
-    const ul = li.parentNode;
+  if(button.tagName === "BUTTON" && button.textContent === "Remove") {
     //remove li from page
     ul.removeChild(li);
+  //Check to see if the element with a type of button with the text content "Edit" was clicked
+  } else if(button.tagName === "BUTTON" && button.textContent === "Edit") {
+    alert("Edit");
   }
 }); 
   
