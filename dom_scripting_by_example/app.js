@@ -1,6 +1,45 @@
 const form = document.getElementById("registrar");
 const input = document.querySelector("input");
+const mainDiv = document.querySelector(".main");
 const ul = document.getElementById("invitedList");
+
+
+//Create the filter guests checkbox
+const div = document.createElement("div");
+const filterLabel = document.createElement("label");
+const filterCheckbox = document.createElement("input");
+filterCheckbox.type = "checkbox";
+
+filterLabel.textContent = "Hide those who have not responded";
+div.appendChild(filterLabel);
+div.appendChild(filterCheckbox);
+mainDiv.insertBefore(div, ul);
+
+//Add change event handler to the filterCheckbox
+filterCheckbox.addEventListener("change", (e) => {
+  //store the checked state into a variable;
+  const isChecked = e.target.checked;
+  //store the li's into a variable
+  const lis = ul.children;
+  
+  //Hide li's if the checkbox is checked
+  if(isChecked) {
+    for(let i = 0; i < lis.length; i++) {
+      let li = lis[i];
+      if(li.className === "responded") {
+         li.style.display = '';
+      }else {
+         li.style.display = "none";                       
+      }
+    }
+  }else {
+    for(let i = 0; i < lis.length; i++) {
+      let li = lis[i];
+      li.style.display = '';
+    }                            
+  }
+});
+
 
 //Function to create li
 
@@ -115,6 +154,25 @@ ul.addEventListener("click", (e) => {
     //Change button text from edit to save
     button.textContent = "Save";
   } else if(button.tagName === "BUTTON" && button.textContent === "Save") {
-    alert("saved");
+    //select the input element
+    const input = li.firstElementChild;
+    //create an span element and set the value to the input text
+    const span = document.createElement("span");
+    span.textContent = input.value;
+    //insert the span before the input, then remove the input
+    li.insertBefore(span, input);
+    li.removeChild(input);
+    //Change button text from edit to save
+    button.textContent = "Edit";
   }
 }); 
+  
+  
+  li.insertBefore(span, input);
+    span.textContent = input.value;
+    li.removeChild(input);
+    button.textContent = "Edit";
+  
+  
+  
+  
