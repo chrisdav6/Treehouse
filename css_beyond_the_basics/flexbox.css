@@ -1,28 +1,14 @@
-.nav, .main {
-  display: flex;
+.main {
+  column-count: 3;
+  column-gap: 3em;
+  column-rule: 2px dotted #000;
+  column-width: 250px;
 }
 
-.nav {
-	-webkit-flex-direction: row;
-	-webkit-justify-content: space-between;
-	-webkit-flex-wrap: wrap;
+img {
+  max-width: 100%;
 }
 
-.nav li {
-  flex-grow: 1;
-}
-
-.col {
-  flex: 1;
-}
-
-.col-c {
-  flex: 2;
-  order: -1;
-}
-
-@media screen and (max-width: 999px) {
-  .main {
-    flex-direction: column;
-  }
+h1 {
+  column-span: all;
 }
