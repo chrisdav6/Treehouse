@@ -140,34 +140,50 @@ document.addEventListener("DOMContentLoaded", () => {
     const button = e.target;
     const li = e.target.parentNode;
     const ul = li.parentNode;
+    
+    //Object containing all of the functions
+    const nameActions = {
+      remove  : () => {
+                  //remove li from page
+                  ul.removeChild(li);
+                },
+        
+      edit    : () => {
+                  //select the span element
+                  const span = li.firstElementChild;
+                  //create an input element and set the value to the span text
+                  const input = document.createElement("input");
+                  input.type = "text";
+                  input.value = span.textContent;
+                  //insert the input before the span, then remove the span
+                  li.insertBefore(input, span);
+                  li.removeChild(span);
+                  //Change button text from edit to save
+                  button.textContent = "Save";
+                },
+        
+      save    : () => {
+                  //select the input element
+                  const input = li.firstElementChild;
+                  //create an span element and set the value to the input text
+                  const span = document.createElement("span");
+                  span.textContent = input.value;
+                  //insert the span before the input, then remove the input
+                  li.insertBefore(span, input);
+                  li.removeChild(input);
+                  //Change button text from edit to save
+                  button.textContent = "Edit";
+                }
+    };
+
     //Check to see if the element with a type of button with the text content "Remove" was clicked
     if(button.tagName === "BUTTON" && button.textContent === "Remove") {
-      //remove li from page
-      ul.removeChild(li);
+      nameActions.remove();
     //Check to see if the element with a type of button with the text content "Edit" was clicked
     } else if(button.tagName === "BUTTON" && button.textContent === "Edit") {
-      //select the span element
-      const span = li.firstElementChild;
-      //create an input element and set the value to the span text
-      const input = document.createElement("input");
-      input.type = "text";
-      input.value = span.textContent;
-      //insert the input before the span, then remove the span
-      li.insertBefore(input, span);
-      li.removeChild(span);
-      //Change button text from edit to save
-      button.textContent = "Save";
+      nameActions.edit();
     } else if(button.tagName === "BUTTON" && button.textContent === "Save") {
-      //select the input element
-      const input = li.firstElementChild;
-      //create an span element and set the value to the input text
-      const span = document.createElement("span");
-      span.textContent = input.value;
-      //insert the span before the input, then remove the input
-      li.insertBefore(span, input);
-      li.removeChild(input);
-      //Change button text from edit to save
-      button.textContent = "Edit";
+      nameActions.save();
     }
   });
     
