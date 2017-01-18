@@ -60,7 +60,7 @@ body {
 
 
 
-/* Skew and scale */
+/* Skew and scale 
 
 .mike {
 	display: block;
@@ -71,5 +71,54 @@ body {
 .wrap:hover .mike {
   transform: skew(45deg) scale(1.5);
 }
+*/
+
+
+
+/* Translate */
+
+.mike {
+	display: block;
+	width: 100%;
+  transition: 1s ease-in-out;
+}
+
+.wrap:hover .mike {
+  transform: translateX(200px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
