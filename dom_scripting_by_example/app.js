@@ -8,8 +8,14 @@ function createLI(text) {
   //Create a new li element
   const li = document.createElement("li");
   
-  //Set the new li text content to the input value
-  li.textContent = text;
+  //Create a new span element to wrap the li text
+  const span = document.createElement("span");
+  
+  //Set the new span text content to the input value
+  span.textContent = text;
+  
+  //Append the span to the list item
+  li.appendChild(span);
   
   //Create a label for the checkbox
   const label = document.createElement("label");
@@ -85,7 +91,7 @@ ul.addEventListener("change", (e) => {
   
 
   
-//Create a on click event handler on the button within the ul element
+//Create a on click event handler on the buttons within the ul element
   
 ul.addEventListener("click", (e) => {
   const button = e.target;
@@ -97,10 +103,18 @@ ul.addEventListener("click", (e) => {
     ul.removeChild(li);
   //Check to see if the element with a type of button with the text content "Edit" was clicked
   } else if(button.tagName === "BUTTON" && button.textContent === "Edit") {
-    alert("Edit");
+    //select the span element
+    const span = li.firstElementChild;
+    //create an input element and set the value to the span text
+    const input = document.createElement("input");
+    input.type = "text";
+    input.value = span.textContent;
+    //insert the input before the span, then remove the span
+    li.insertBefore(input, span);
+    li.removeChild(span);
+    //Change button text from edit to save
+    button.textContent = "Save";
+  } else if(button.tagName === "BUTTON" && button.textContent === "Save") {
+    alert("saved");
   }
 }); 
-  
-  
-  
-  
