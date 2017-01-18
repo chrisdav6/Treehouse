@@ -50,45 +50,43 @@ document.addEventListener("DOMContentLoaded", () => {
   //Function to create li
   
   function createLI(text) {
+    
+    //A function to build and return elements
+    function createElement(elementName, property, value) {
+      //Create a new element
+      const element = document.createElement(elementName);
+      //Set the new span text content to the input value
+      element[property] = value;
+      return element;
+    }
+    
+    //A function to append elements to LI
+    function appendToLI(elementName, property, value) {
+      const element = createElement(elementName, property, value);
+      li.appendChild(element);
+      return element;
+    }
+    
     //Create a new li element
     const li = document.createElement("li");
     
-    //Create a new span element to wrap the li text
-    const span = document.createElement("span");
+    //Create a new span element to wrap the li text and append to LI
+    appendToLI("span", "textContent", text);
     
-    //Set the new span text content to the input value
-    span.textContent = text;
-    
-    //Append the span to the list item
-    li.appendChild(span);
-    
-    //Create a label for the checkbox
-    const label = document.createElement("label");
-    
-    //Set the text content for the label
-    label.textContent = "Confirmed";
+    //Create a label for the checkbox and append to LI
+    const label = appendToLI("label", "textContent", "Confirmed");
     
     //Create a new input element and set the type to a checkbox
-    const checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
+    const checkbox = createElement("input", "type", "checkbox");
     
     //Append the checkbox to the label
     label.appendChild(checkbox);
     
-    //Append the label and checkbox to the li
-    li.appendChild(label);
+    //Create a button element with the text content edit and append to LI
+    appendToLI("button", "textContent", "Edit");
     
-    //Create a button element with the text content edit
-    const editButton = document.createElement("button");
-    editButton.textContent = "Edit";
-    //Append the button to the li
-    li.appendChild(editButton);
-    
-    //Create a button element with the text content remove
-    const removeButton = document.createElement("button");
-    removeButton.textContent = "Remove";
-    //Append the button to the li
-    li.appendChild(removeButton);
+    //Create a button element with the text content remove and append to LI
+    appendToLI("button", "textContent", "Remove");
     
     return li;
   }
